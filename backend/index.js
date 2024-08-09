@@ -48,8 +48,8 @@ app.post("/register", async (req, res) => {
         const info = await transporter.sendMail({
             from: '"Paari Laishram" <paarilai05@gmail.com>',
             to: `${email}`,
-            subject: `OTP Verification${name}`,
-            html: `<h1>Please find the OTP below for verficitation</h1><p>${otp}</p>`,
+            subject: `OTP Verification ${name}`,
+            html: `<h1>Please find the OTP below for verficitation</h1><h2>${otp}</h2>`,
         });
         console.log("Message sent: %s", info.messageId);
     }
@@ -58,6 +58,23 @@ app.post("/register", async (req, res) => {
     await connection.query(`INSERT into users_otp(user_email, otp_code) values('${email}', ${otp})`)
 })
 
+app.post("/verify", async (req, res) => {
+    const connection = await mysql.createConnection({
+        host: 'localhost',
+        user: 'root',
+        password: 'root',
+        database: 'appt',
+    });
+
+    const email = req.body.email;
+    const otp = req.body.otp;
+
+    const result = await connection.query(`select user_email from users_otp where user_email = '${email}' and otp_code=${otp}`)
+   console.log(result);
+   if(result[0][0] === 0){
+    console.log("failed")
+   }
+})
 
 app.listen(port, (req, res) => {
     console.log(`Listening on port ${port}`);

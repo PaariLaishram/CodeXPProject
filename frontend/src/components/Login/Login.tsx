@@ -5,12 +5,16 @@ import TextField from "@mui/material/TextField";
 import googleLogo from "./googleLogin.png";
 import Titlebar from "../Titlebar/Titlebar";
 import Footer from "../Footer/Footer";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   const [flag, setFlag] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [checked, setChecked] = useState(false);
+  const navigate = useNavigate();
+
+  const data = { userEmail: email };
 
   const handleToggle = () => {
     setChecked(!checked);
@@ -30,8 +34,7 @@ export default function Login() {
   };
 
   const submitBtnHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
-    console.log(email, password);
-    e.preventDefault();
+    navigate("/verify", { state: data });
   };
 
   return (

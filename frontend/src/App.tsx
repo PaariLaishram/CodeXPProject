@@ -8,7 +8,7 @@ import OTPVerify from './components/OTPVerify/OTPVerify';
 function App() {
   return (
     <div>
-     <OTPVerify numberOfDigits={4} />
+     <OTPVerify/>
     </div>
   );
 }
