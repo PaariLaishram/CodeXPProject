@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.26dd10db.css",
+    "main.js": "/static/js/main.f4e07357.js",
+    "static/js/453.258b012d.chunk.js": "/static/js/453.258b012d.chunk.js",
+    "static/media/signUp_bg.jpg": "/static/media/signUp_bg.9e0ca9341fda8fbb0ccb.jpg",
+    "static/media/Logo.png": "/static/media/Logo.d13a16412c3ebfb52f31.png",
+    "static/media/medicine_blue_bg.jpg": "/static/media/medicine_blue_bg.2d34434dda09a069595a.jpg",
+    "index.html": "/index.html",
+    "main.26dd10db.css.map": "/static/css/main.26dd10db.css.map",
+    "main.f4e07357.js.map": "/static/js/main.f4e07357.js.map",
+    "453.258b012d.chunk.js.map": "/static/js/453.258b012d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.26dd10db.css",
+    "static/js/main.f4e07357.js"
+  ]
+}
