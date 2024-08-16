@@ -11,7 +11,7 @@ const { Client } = pg;
 //connect to db
 const client = new Client({
     user: 'postgres',
-    password: 'Baby2031#',
+    password: 'root',
     host: 'localhost',
     port: 5432,
     database: 'Appt'
